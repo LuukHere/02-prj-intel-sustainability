@@ -1,7 +1,6 @@
 /* Add your CSS here */
 
 body {
-    max-width: 1000px;
     margin: 0 auto;
     
     /* font sizing */
@@ -16,7 +15,7 @@ p {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 h2 {
@@ -32,7 +31,7 @@ header {
     padding: 20px; /* Add some padding around the image */
     color: whitesmoke; /* Set text color to white */
     /* Add a simple blue gradient background */
-    background: linear-gradient(to right, #2196f3, #1d5cb9); /* Light blue to dark blue */
+    background: linear-gradient(to right, #35a4ff, #09316e); /* Light blue to dark blue */
 }
 
 header img {
@@ -41,17 +40,18 @@ header img {
 }
 
 .timeline {
+    max-width: 1000px;
     display: flex;           /* Place cards in a row */
     flex-direction: row;     /* Make sure the direction is horizontal */
     flex-wrap: nowrap;       /* Do not wrap cards to the next line */
     gap: 20px;               /* Space between cards */
     overflow-x: auto;        /* Enable horizontal scrolling if needed */
-    width: 100%;           /* Show only 4 cards at a time (4 * 250px + 3 * 20px gap) */
+               /* Show only 4 cards at a time (4 * 250px + 3 * 20px gap) */
     /* 4 cards * 250px = 1000px, 3 gaps * 20px = 60px, total = 1040px */
     margin: 0 auto;          /* Center the timeline on the page */
     padding-bottom: 10px;    /* Space for scrollbar */
     box-sizing: border-box;  /* Include padding and border in the width */
-    padding-top: 200px; /* Add some padding to the top */
+    padding-top: 5em; /* Add some padding to the top */
 }
 
 
