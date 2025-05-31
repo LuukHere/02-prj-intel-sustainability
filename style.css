@@ -1,4 +1,7 @@
 /* Add your CSS here */
+
+
+
 body {
     /* Limit the width and center horizontally */
     max-width: 1000px;
@@ -9,11 +12,10 @@ body {
     padding-right: 20px; /* Space on the right */
 
     /* Center the body vertically and horizontally */
-    min-height: 100vh; /* Make body at least as tall as the viewport */
+    max-height: 100vh; /* Make body at least as tall as the viewport */
     display: flex; /* Use flexbox for easy centering */
     flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center content vertically */
-
+    
     /* font sizing */
     font-size: 16px; /* Base font size */
     font-family: "Montserrat", sans-serif;
@@ -35,6 +37,7 @@ h1 {
 
     /* Add a simple blue gradient background */
     background: linear-gradient(to right, #2196f3, #1d5cb9); /* Light blue to dark blue */
+    margin-bottom: 150px;
 }
 
 .hero img {
@@ -45,30 +48,39 @@ h1 {
     padding-bottom: 10px;
 }
 
-/* Style for each card */
-.card {
-    position: relative; /* Needed for overlay positioning */
-    margin-bottom: 20px; /* Space between cards */
-    background: #18315310; /* Very light background for cards */
-    padding: 10px;
-    border-radius: 8px;
-    max-width: 450px;
-    max-height: 300px;
-    
-}
-
-.card img {
-    width: 100%; /* Make the image fill the card */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 4px; /* Rounded corners for images */
-}
-
-/* Container for the image and overlay */
-.card-container {
+.timeline {
+    margin: 0 auto; /* Center the timeline */
     display: flex; /* Use flexbox for layout */
     flex-wrap: nowrap; /* Allow wrapping of content */
     gap: 10px;
+    max-width: 75%;
+    overflow-x: auto;
+    background-color: red;
 }
+
+/* Style for each card */
+.card {
+    position: relative;      /* Needed for overlay positioning */
+    margin-bottom: 20px;     /* Space between cards */
+    background: #18315310;   /* Very light background for cards */
+    padding: 10px;
+    border-radius: 8px;
+    width: 400px;            /* Set card width */
+    height: 400px;           /* Set card height */
+    box-sizing: border-box;  /* Include padding and border in the size */
+    overflow: hidden;        /* Hide anything that overflows the card */
+}
+
+.card img {
+    width: 100%;    /* Image fills the card's width */
+    height: 100px;  /* Or use height: auto; for natural aspect ratio */
+    object-fit: cover; /* Crop the image if needed */
+    border-radius: 4px;   /* Rounded corners for images */
+    
+}
+
+/* Container for the image and overlay */
+
 
 /* The overlay box, hidden by default */
 .card-overlay{
@@ -84,13 +96,14 @@ h1 {
 }
 
 /* Show the overlay when hovering the container */
-.card-container:hover .card-overlay {
+.card:hover .card-overlay {
     opacity: 1;
 }
 
 /* Hide the paragraph inside each card by default */
 .card p {
     display: none; /* Hide the paragraph */
+    font-size: 0.9em; /* Smaller font size for the paragraph */
 }
 
 /* Show the paragraph when hovering over the card */
