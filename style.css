@@ -1,1 +1,118 @@
 /* Add your CSS here */
+body {
+    /* Limit the width and center horizontally */
+    max-width: 1000px;
+    margin: 0 auto;
+
+    /* Add space on the left and right sides */
+    padding-left: 20px;  /* Space on the left */
+    padding-right: 20px; /* Space on the right */
+
+    /* Center the body vertically and horizontally */
+    min-height: 100vh; /* Make body at least as tall as the viewport */
+    display: flex; /* Use flexbox for easy centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+
+    /* font sizing */
+    font-size: 16px; /* Base font size */
+    font-family: "Montserrat", sans-serif;
+}
+
+p {
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.hero {
+    /* Set the width to 100% of the parent */
+    width: 100%;
+    padding: 20px; /* Add some padding around the image */
+    color: whitesmoke; /* Set text color to white */
+
+    /* Add a simple blue gradient background */
+    background: linear-gradient(to right, #2196f3, #1d5cb9); /* Light blue to dark blue */
+}
+
+.hero img {
+    /* Make the image responsive */
+    max-width: 200px;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is treated as a block element */
+    padding-bottom: 10px;
+}
+
+/* Style for each card */
+.card {
+    position: relative; /* Needed for overlay positioning */
+    margin-bottom: 20px; /* Space between cards */
+    background: #18315310; /* Very light background for cards */
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 450px;
+    max-height: 300px;
+    
+}
+
+
+
+.card img {
+    width: 100%; /* Make the image fill the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Rounded corners for images */
+}
+
+/* Container for the image and overlay */
+.card-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: nowrap; /* Allow wrapping of content */
+    gap: 10px;
+}
+
+/* The overlay box, hidden by default */
+.card-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 30, 30, 0.6); /* Dark grey, translucent */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s;
+    border-radius: 4px;
+}
+
+/* Show the overlay when hovering the container */
+.card-container:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Hide the paragraph inside each card by default */
+.card p {
+    display: none; /* Hide the paragraph */
+}
+
+/* Show the paragraph when hovering over the card */
+.card:hover p {
+    display: block; /* Show the paragraph */
+}
+
+@media (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    body {
+        padding-left: 10px; /* Less padding on smaller screens */
+        padding-right: 10px;
+    }
+
+    .hero img {
+        max-width: 150px; /* Smaller image on small screens */
+    }
+
+    .card {
+        max-width: 100%; /* Full width cards on small screens */
+        max-height: none; /* No height limit */
+    }
+}
