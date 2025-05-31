@@ -11,6 +11,8 @@ body {
 
 p {
     font-size: 1em;
+    color: white;
+    padding: 10px;
 }
 
 h1 {
@@ -31,7 +33,6 @@ header {
     color: whitesmoke; /* Set text color to white */
     /* Add a simple blue gradient background */
     background: linear-gradient(to right, #2196f3, #1d5cb9); /* Light blue to dark blue */
-    padding-bottom: 20px; /* Add padding at the bottom for spacing */
 }
 
 header img {
@@ -50,6 +51,7 @@ header img {
     margin: 0 auto;          /* Center the timeline on the page */
     padding-bottom: 10px;    /* Space for scrollbar */
     box-sizing: border-box;  /* Include padding and border in the width */
+    padding-top: 200px; /* Add some padding to the top */
 }
 
 
