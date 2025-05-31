@@ -6,12 +6,12 @@ body {
     /* font sizing */
     font-size: 16px; /* Base font size */
     font-family: "Montserrat", Verdana, sans-serif; /* Use Montserrat from Google Fonts, then Verdana, then any sans-serif */
+    color: whitesmoke;
 
 }
 
 p {
     font-size: 1em;
-    color: white;
     padding: 10px;
 }
 
@@ -32,10 +32,6 @@ section {
     margin: 0 auto;
     padding: 2vh; /* Add some padding around the section */
     
-}
-
-.scroll {
-    color: rgb(255, 255, 255);
 }
 
 header {
