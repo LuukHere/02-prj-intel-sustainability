@@ -5,7 +5,8 @@ body {
     
     /* font sizing */
     font-size: 16px; /* Base font size */
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", Verdana, sans-serif; /* Use Montserrat from Google Fonts, then Verdana, then any sans-serif */
+
 }
 
 p {
@@ -29,7 +30,12 @@ h3 {
 section {
     /* Center the section */
     margin: 0 auto;
+    padding: 2vh; /* Add some padding around the section */
     
+}
+
+.scroll {
+    color: black;
 }
 
 header {
@@ -65,15 +71,19 @@ header p {
     margin : 0 auto;
 
     /* Use flexbox to place cards in a row */
-    display: flex;           
-    flex-direction: row;     
-    flex-wrap: nowrap;       
-    gap: 20px;               
-    overflow-x: auto;        
-    padding-bottom: 1vh;;    
-    box-sizing: border-box;  
-    padding-top: 5em;        
-    max-width: 75%;
+    display: flex;                 /* Place cards in a row */
+    flex-direction: row;           /* Make sure the direction is horizontal */
+    flex-wrap: nowrap;             /* Do not wrap cards to the next line */
+    gap: 20px;                     /* Space between cards */
+    overflow-x: auto;              /* Enable horizontal scrolling if needed */
+    box-sizing: border-box;        /* Include border and padding in the width */
+    width: 75%;                   /* Take up 100% of the available width */
+    margin: 0 auto;                /* Center the timeline */
+    padding-bottom: 1vh;           /* Space below the timeline */
+    padding-top: 5em;              /* Space above the timeline */
+
+    /* Add scroll snap for smooth card snapping */
+    scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
 }
 
 
@@ -89,6 +99,9 @@ header p {
     min-height: 300px;       /* Each card is always at least 250px tall */
     max-height: 300px;       /* Each card is never more than 250px tall */
     border-radius: 8px;      /* Rounded corners for a softer look */
+
+    /* Make each card snap to the start of the scroll area */
+    scroll-snap-align: start;      /* Snap each card to the start */
 }
 
 /* Make the image fill the card and crop if needed */
@@ -132,20 +145,40 @@ header p {
 
 @media (max-width: 500px) {
 
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    header {
+
+        padding: 3vh 10vw 3vh 10vw; /* Top, right, bottom, left */
+    }
+
     header img {
         width: 175px;
 
     }
     header h1{
-        font-size: 1.5em; /* Smaller text for smaller screens */
+        font-size: 1.25em; /* Smaller text for smaller screens */
     }
 
     header p {
-        font-size: 1em; /* Smaller text for smaller screens */
+        font-size: .9em; /* Smaller text for smaller screens */
+        margin : 0 auto; /* Center the paragraph */
     }
 
     .timeline {
-        width: 75%; /* Adjust width for smaller screens */
+        display: flex;            /* Place cards in a row */
+        flex-direction: row;      /* Make sure the direction is horizontal */
+        flex-wrap: nowrap;        /* Do not wrap cards to the next line */
+        gap: 20px;                /* Space between cards */
+        overflow-x: auto;         /* Enable horizontal scrolling if needed */
+        box-sizing: border-box;   /* Include border and padding in the width */
+        width: 100%;              /* Take up 100% of the available width */
+        margin: 0 auto;                /* Remove any margin */
+        padding-top: auto;         /* Add space at the top */
+
     }
 
     .card {
