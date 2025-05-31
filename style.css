@@ -1,20 +1,8 @@
 /* Add your CSS here */
 
-
-
 body {
-    /* Limit the width and center horizontally */
     max-width: 1000px;
     margin: 0 auto;
-
-    /* Add space on the left and right sides */
-    padding-left: 20px;  /* Space on the left */
-    padding-right: 20px; /* Space on the right */
-
-    /* Center the body vertically and horizontally */
-    max-height: 100vh; /* Make body at least as tall as the viewport */
-    display: flex; /* Use flexbox for easy centering */
-    flex-direction: column; /* Stack children vertically */
     
     /* font sizing */
     font-size: 16px; /* Base font size */
@@ -29,54 +17,59 @@ h1 {
     font-size: 2em;
 }
 
-.hero {
-    /* Set the width to 100% of the parent */
-    width: 100%;
-    padding: 20px; /* Add some padding around the image */
-    color: whitesmoke; /* Set text color to white */
-
-    /* Add a simple blue gradient background */
-    background: linear-gradient(to right, #2196f3, #1d5cb9); /* Light blue to dark blue */
-    margin-bottom: 150px;
+h2 {
+    font-size: 1.2em;
 }
 
-.hero img {
-    /* Make the image responsive */
+h3 {
+    font-size: 1em;
+}
+
+header {
+    margin: 0 auto; /* Center the hero section */
+    padding: 20px; /* Add some padding around the image */
+    color: whitesmoke; /* Set text color to white */
+    /* Add a simple blue gradient background */
+    background: linear-gradient(to right, #2196f3, #1d5cb9); /* Light blue to dark blue */
+    padding-bottom: 20px; /* Add padding at the bottom for spacing */
+}
+
+header img {
     max-width: 200px;
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure the image is treated as a block element */
     padding-bottom: 10px;
 }
 
 .timeline {
-    margin: 0 auto; /* Center the timeline */
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: nowrap; /* Allow wrapping of content */
-    gap: 10px;
-    max-width: 75%;
-    overflow-x: auto;
-    background-color: red;
+    display: flex;           /* Place cards in a row */
+    flex-direction: row;     /* Make sure the direction is horizontal */
+    flex-wrap: nowrap;       /* Do not wrap cards to the next line */
+    gap: 20px;               /* Space between cards */
+    overflow-x: auto;        /* Enable horizontal scrolling if needed */
+    width: 100%;           /* Show only 4 cards at a time (4 * 250px + 3 * 20px gap) */
+    /* 4 cards * 250px = 1000px, 3 gaps * 20px = 60px, total = 1040px */
+    margin: 0 auto;          /* Center the timeline on the page */
+    padding-bottom: 10px;    /* Space for scrollbar */
+    box-sizing: border-box;  /* Include padding and border in the width */
 }
+
+
 
 /* Style for each card */
 .card {
     position: relative;      /* Needed for overlay positioning */
-    margin-bottom: 20px;     /* Space between cards */
-    background: #18315310;   /* Very light background for cards */
-    padding: 10px;
-    border-radius: 8px;
-    width: 400px;            /* Set card width */
-    height: 400px;           /* Set card height */
-    box-sizing: border-box;  /* Include padding and border in the size */
-    overflow: hidden;        /* Hide anything that overflows the card */
+    min-width: 250px;             /* Each card is always at least 250px wide */
+    max-width: 250px;             /* Each card is never more than 250px wide */
+    min-height: 250px;            /* Each card is always at least 250px tall */
+    max-height: 250px;            /* Each card is never more than 250px tall */
 }
 
+/* Make the image fill the card and crop if needed */
 .card img {
-    width: 100%;    /* Image fills the card's width */
-    height: 100px;  /* Or use height: auto; for natural aspect ratio */
-    object-fit: cover; /* Crop the image if needed */
-    border-radius: 4px;   /* Rounded corners for images */
-    
+    width: 100%;         /* Image fills the card width */
+    height: 150px;       /* Fixed height for the image */
+    object-fit: cover;   /* Crop the image to fill the area */
+    border-radius: 4px;  /* Rounded corners for images */
+    display: block;      /* Make sure the image is a block element */
 }
 
 /* Container for the image and overlay */
@@ -89,7 +82,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(30, 30, 30, 0.6); /* Dark grey, translucent */
+    background: rgba(22, 58, 124, 0.9); /* Dark grey, translucent */
     opacity: 0; /* Start hidden */
     transition: opacity 0.3s;
     border-radius: 4px;
@@ -100,30 +93,4 @@ h1 {
     opacity: 1;
 }
 
-/* Hide the paragraph inside each card by default */
-.card p {
-    display: none; /* Hide the paragraph */
-    font-size: 0.9em; /* Smaller font size for the paragraph */
-}
 
-/* Show the paragraph when hovering over the card */
-.card:hover p {
-    display: block; /* Show the paragraph */
-}
-
-@media (max-width: 600px) {
-    /* Adjust styles for smaller screens */
-    body {
-        padding-left: 10px; /* Less padding on smaller screens */
-        padding-right: 10px;
-    }
-
-    .hero img {
-        max-width: 150px; /* Smaller image on small screens */
-    }
-
-    .card {
-        max-width: 100%; /* Full width cards on small screens */
-        max-height: none; /* No height limit */
-    }
-}
