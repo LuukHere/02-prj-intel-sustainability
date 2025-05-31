@@ -26,43 +26,69 @@ h3 {
     font-size: 1em;
 }
 
+section {
+    /* Center the section */
+    margin: 0 auto;
+    
+}
+
 header {
-    margin: 0 auto; /* Center the hero section */
-    padding: 20px; /* Add some padding around the image */
+    /* Center the hero section */
+    margin: 0 auto;
+
+    /* Make the header take up the full width of the viewport */
+    width: 100%;
+
+    /* Add padding for space inside the header */
+    padding: 3vh 10vw 3vh 10vw; /* Top, right, bottom, left */
+
     color: whitesmoke; /* Set text color to white */
+
     /* Add a simple blue gradient background */
     background: linear-gradient(to right, #35a4ff, #09316e); /* Light blue to dark blue */
+    box-sizing: border-box; /* Include padding in the width */
 }
 
 header img {
     max-width: 200px;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
+header p {
+    font-size: 1.2em; /* Slightly larger text for the paragraph */
+    padding: 0px;
+}
+
 .timeline {
-    max-width: 1000px;
-    display: flex;           /* Place cards in a row */
-    flex-direction: row;     /* Make sure the direction is horizontal */
-    flex-wrap: nowrap;       /* Do not wrap cards to the next line */
-    gap: 20px;               /* Space between cards */
-    overflow-x: auto;        /* Enable horizontal scrolling if needed */
-               /* Show only 4 cards at a time (4 * 250px + 3 * 20px gap) */
-    /* 4 cards * 250px = 1000px, 3 gaps * 20px = 60px, total = 1040px */
-    margin: 0 auto;          /* Center the timeline on the page */
-    padding-bottom: 10px;    /* Space for scrollbar */
-    box-sizing: border-box;  /* Include padding and border in the width */
-    padding-top: 5em; /* Add some padding to the top */
+    /* Center the timeline horizontally */
+    margin : 0 auto;
+
+    /* Use flexbox to place cards in a row */
+    display: flex;           
+    flex-direction: row;     
+    flex-wrap: nowrap;       
+    gap: 20px;               
+    overflow-x: auto;        
+    padding-bottom: 1vh;;    
+    box-sizing: border-box;  
+    padding-top: 5em;        
+    max-width: 75%;
 }
 
 
 
 /* Style for each card */
 .card {
+    /* Gradient background for each card */
+    background: linear-gradient(to bottom right, #d3d3d3, #505050); /* Light blue to darker blue */
+    padding: 10px;
     position: relative;      /* Needed for overlay positioning */
-    min-width: 250px;             /* Each card is always at least 250px wide */
-    max-width: 250px;             /* Each card is never more than 250px wide */
-    min-height: 250px;            /* Each card is always at least 250px tall */
-    max-height: 250px;            /* Each card is never more than 250px tall */
+    min-width: 300px;        /* Each card is always at least 250px wide */
+    max-width: 300;        /* Each card is never more than 250px wide */
+    min-height: 300px;       /* Each card is always at least 250px tall */
+    max-height: 300px;       /* Each card is never more than 250px tall */
+    border-radius: 8px;      /* Rounded corners for a softer look */
 }
 
 /* Make the image fill the card and crop if needed */
@@ -95,4 +121,42 @@ header img {
     opacity: 1;
 }
 
+.scroll {
+    color: black;
+    text-align: center; /* Center the text inside elements with the 'scroll' class */
+    /* You can also add margin if you want to center the whole element */
+    margin-left: auto;
+    margin-right: auto;
+}
 
+
+@media (max-width: 500px) {
+
+    header img {
+        width: 175px;
+
+    }
+    header h1{
+        font-size: 1.5em; /* Smaller text for smaller screens */
+    }
+
+    header p {
+        font-size: 1em; /* Smaller text for smaller screens */
+    }
+
+    .timeline {
+        width: 75%; /* Adjust width for smaller screens */
+    }
+
+    .card {
+        min-width: 300px; /* Smaller cards for smaller screens */
+        max-width: 300px; /* Smaller cards for smaller screens */
+        min-height: 300px; /* Smaller cards for smaller screens */
+        max-height: 300px; /* Smaller cards for smaller screens */
+        padding: auto;
+    }
+
+    .scroll {
+        font-size: 0.7em; /* Smaller text for smaller screens */
+    }
+  }
