@@ -100,7 +100,6 @@ header p {
     max-height: 300px;       /* Each card is never more than 300px tall */
     border-radius: 8px;      /* Rounded corners for a softer look */
     box-sizing: border-box;  /* Include padding and border in the size */
-    overflow: auto;          /* Show scrollbars if content is too big */
 
     /* Make each card snap to the start of the scroll area */
     scroll-snap-align: start;      /* Snap each card to the start */
@@ -117,13 +116,12 @@ header p {
 
 /* Make the image fill the card and crop if needed */
 .card img {
-    flex: 1;                    /* Take up all remaining vertical space */
-    width: 100%;                /* Fill the card's width */
-    object-fit: cover;          /* Crop the image if needed */
-    border-radius: 4px;         /* Rounded corners for images */
-    display: block;             /* Make sure the image is a block element */
-    min-height: 0;              /* Allow shrinking if needed */
-    max-height: 100%; 
+    width: 100%;            /* Image fills the card's width */
+    height: 180px;          /* Fixed height for all images */
+    object-fit: cover;      /* Crop the image if it doesn't fit */
+    border-radius: 4px;     /* Rounded corners for images */
+    display: block;         /* Make sure the image is a block element */
+    /* object-fit: cover makes sure the image fills the space and crops if needed */
 }
 
 /* Container for the image and overlay */
