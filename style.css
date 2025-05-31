@@ -117,11 +117,13 @@ header p {
 
 /* Make the image fill the card and crop if needed */
 .card img {
-    width: 100%;         /* Image fills the card width */
-    height: 150px;       /* Fixed height for the image */
-    object-fit: cover;   /* Crop the image to fill the area */
-    border-radius: 4px;  /* Rounded corners for images */
-    display: block;      /* Make sure the image is a block element */
+    flex: 1;                    /* Take up all remaining vertical space */
+    width: 100%;                /* Fill the card's width */
+    object-fit: cover;          /* Crop the image if needed */
+    border-radius: 4px;         /* Rounded corners for images */
+    display: block;             /* Make sure the image is a block element */
+    min-height: 0;              /* Allow shrinking if needed */
+    max-height: 100%; 
 }
 
 /* Container for the image and overlay */
@@ -180,24 +182,21 @@ header p {
     }
 
     .timeline {
-        display: flex;            /* Place cards in a row */
-        flex-direction: row;      /* Make sure the direction is horizontal */
-        flex-wrap: nowrap;        /* Do not wrap cards to the next line */
+        display: flex;            /* Use flexbox */
+        flex-direction: column;   /* Stack cards vertically */
         gap: 20px;                /* Space between cards */
-        overflow-x: auto;         /* Enable horizontal scrolling if needed */
+        overflow-y: auto;         /* Show vertical scrollbar if needed */
+        overflow-x: hidden;       /* Hide horizontal scrollbar */
+        width: 100%;              /* Take up full width */
+        margin: 0;                /* Remove margin */
+        padding: 0;               /* Remove padding */
         box-sizing: border-box;   /* Include border and padding in the width */
-        min-width: 75vw;   /* Each card takes up the full viewport width */
-        max-width: 75vw;
-        margin: 0 auto;                /* Remove any margin */
-        padding-top: auto;         /* Add space at the top */
-
     }
 
     .card {
-         min-width: 75vw;   /* Each card takes up the full viewport width */
-        max-width: 75vw;
-        
-        box-sizing: border-box; /* Include padding and border in the width */
+        min-width: 100%;          /* Card takes full width of container */
+        max-width: 100%;
+        box-sizing: border-box;   /* Include padding and border in the width */
     }
     .card p {
         font-size: 1.2em; /* Smaller text for smaller screens */
